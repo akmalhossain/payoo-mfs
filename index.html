@@ -7,95 +7,190 @@
     <title>Payoo-MFS</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        btnLabel: 'rgba(8, 8, 8, 0.7)',
+                        txt: 'rgba(8, 8, 8, 0.5)',
+                        title: 'rgba(8, 8, 8, 1)',
+                        title2: 'rgba(8, 8, 8, 0.9)',
+                        title3: 'rgba(8, 8, 8, 0.7)',
+                        inputBg: 'rgba(244, 245, 247, 1)',
+                    },
+                    background: {
+                        inputBg: 'rgba(244, 245, 247, 1)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <main class="flex justify-center">
-        <div class="mockup-phone">
-            <div class="camera"></div>
-            <div class="display">
-                <div class="artboard artboard-demo phone-3">
-                    <!-- current balance start -->
-                    <div class="stats shadow">
-                        <div class="stat">
-                            <div class="stat-title">Available Balance</div>
-                            <div id="current-balance" class="stat-value">9400</div>
+    <main class="constainer mx-auto">
+        <!-- mobile size start -->
+        <section class="w-[450px]  bg-[#F4F5F7] mx-auto py-8">
+            <section class="px-6 bg-white py-6 rounded-2xl">
+                <!-- balance section start -->
+                <section class="balance-Container flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div>
+                            <img src="./image/logo.png" alt="">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-2xl text-black">$<span>4500</span></h4>
+                            <p>Available Balance</p>
                         </div>
                     </div>
-                    <!-- current balance end -->
-                    <div class="divider"></div>
-                    <!-- features start -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <button id="show-add-money-form" class="btn btn-lg">Add Money</button>
-                        <button id="btn-show-cash-out" class="btn btn-lg">Cash Out</button>
-                        <button id="btn-transaction" class="btn btn-lg">Transaction</button>
+                    <button class="rounded-lg border px-3 py-2 text-sm border-[#08080821]">Logout</button>
+                </section>
+                <!-- balance section end -->
+                <!-- feature section start  -->
+                <section>
+                    <div class="mt-8 space-y-2">
+                        <h1 class="font-bold text-2xl text-title">Welcome to Payoo!</h1>
+                        <p class="text-txt">Enjoy Enjoy easy and convenient financial services with us. Cashout charge
+                            is low and </p>
                     </div>
-                    <!-- features end -->
-                    <div class="divider"></div>
-                    <!--add money form start -->
-                    <div id="add-money-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                        <form class="card-body">
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Amount</span>
-                                </label>
-                                <input id="add-money-amount" type="text" placeholder="Amount"
-                                    class="input input-bordered" autocomplete="off" required />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Pin Number</span>
-                                </label>
-                                <input id="input-pin-number" type="password" placeholder="Pin number"
-                                    class="input input-bordered" autocomplete="off" required />
-                            </div>
-                            <div class="form-control mt-6">
-                                <button id="btn-add-money" class="btn btn-primary">Add money</button>
-                            </div>
-                        </form>
+                    <div class="grid grid-cols-3 mt-8 gap-4   ">
+                        <button
+                            class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
+                            <img src="./image/addmoney.svg" alt=""> Add Money </button>
+                        <button
+                            class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
+                            <img src="./image/cashout.svg" alt=""> Cashout </button>
+                        <button
+                            class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
+                            <img src="./image/transferMoney.svg" alt=""> Transfer Money </button>
+                        <button
+                            class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
+                            <img src="./image/getbonus.svg" alt=""> Get Bonus </button>
+                        <button
+                            class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
+                            <img src="./image/paybill.svg" alt=""> Pay Bill </button>
+                        <button
+                            class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
+                            <img src="./image/transaction.svg" alt=""> Transactions </button>
                     </div>
-                    <!--add money form end -->
-                    <!-- cash out form start  -->
-
-                    <div id="cash-out-form" class="hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                        <form class="card-body">
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Cash out Amount</span>
-                                </label>
-                                <input id="cash-out-amount" type="text" placeholder="Cash out amount"
-                                    class="input input-bordered" autocomplete="off" required />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Pin Number</span>
-                                </label>
-                                <input id="input-cash-out-pin" type="password" placeholder="Pin number"
-                                    class="input input-bordered" autocomplete="off" required />
-                            </div>
-                            <div class="form-control mt-6">
-                                <button id="btn-cash-out" class="btn btn-primary">Cash Out</button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- cash out form end  -->
-                     <!-- transaction section start  -->
-                      <div id="transaction" class="">
-                        <h5 class="text-3xl">Transaction</h5>
-                        <div id="transaction-container">
-
-                        </div>
-                      </div>
-                     <!-- transaction section end  -->
-
+                </section>
+                <!-- feature section end  -->
+            </section>
+            <!-- latest payment section start -->
+            <section class="mt-8 px-6">
+                <div class="flex justify-between">
+                    <h3 class="text-title2 text-lg font-semibold">Latest Payment</h3>
+                    <p>View All</p>
                 </div>
-            </div>
-        </div>
+                <!-- cards -->
+                <div>
+                    <!-- card 1 -->
+                    <div class="flex justify-between items-center mt-4 bg-white px-4 py-3 rounded-2xl border-title2">
+                        <div class="flex justify-center gap-2">
+                            <img src="./image/addmoney.svg" alt="" class="bg-gray-200 rounded-full py-2 px-3">
+                            <div>
+                                <h4 class="text-title3 font-semibold text-lg">Electricity Bill</h4>
+                                <p class="text-title3 text-[12px]">Tody 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div><img src="./image/3dots.svg" alt=""></div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="flex justify-between items-center mt-4 bg-white px-4 py-3 rounded-2xl border-title2">
+                        <div class="flex justify-center gap-2">
+                            <img src="./image/addmoney.svg" alt="" class="bg-gray-200 rounded-full py-2 px-3">
+                            <div>
+                                <h4 class="text-title3 font-semibold text-lg">Bank Doposit</h4>
+                                <p class="text-title3 text-[12px]">Tody 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div><img src="./image/3dots.svg" alt=""></div>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="flex justify-between items-center mt-4 bg-white px-4 py-3 rounded-2xl border-title2">
+                        <div class="flex justify-center gap-2">
+                            <img src="./image/addmoney.svg" alt="" class="bg-gray-200 rounded-full py-2 px-3">
+                            <div>
+                                <h4 class="text-title3 font-semibold text-lg">Mobile Recharge</h4>
+                                <p class="text-title3 text-[12px]">Tody 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div><img src="./image/3dots.svg" alt=""></div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="flex justify-between items-center mt-4 bg-white px-4 py-3 rounded-2xl border-title2">
+                        <div class="flex justify-center gap-2">
+                            <img src="./image/addmoney.svg" alt="" class="bg-gray-200 rounded-full py-2 px-3">
+                            <div>
+                                <h4 class="text-title3 font-semibold text-lg">Gas Bill</h4>
+                                <p class="text-title3 text-[12px]">Tody 01:44 AM</p>
+                            </div>
+                        </div>
+                        <div><img src="./image/3dots.svg" alt=""></div>
+                    </div>
+                </div>
+            </section>
+            <!-- latest payment section end -->
+            <!-- add money forms start-->
+            <section id="add-money-form" class="px-6 mt-8">
+                <h3 class="text-title2 text-lg font-semibold">Add Money</h3>
+                <form class="bg-white p-6 mt-4 rounded-3xl space-y-4 ">
+                    <!-- select bank -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Select A Bank</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank">
+                    </div>
+                    <!-- bank account number -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Bank Account Number</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank">
+                    </div>
+                    <!-- Amount to Add -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Amount to Add</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank" required>
+                    </div>
+                    <!-- Pin number -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Pin Number</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank" required>
+                    </div>
+                </form>
+            </section>
+            <!-- add money forms end-->
+            <!-- cash out forms start-->
+            <section id="cash-out-form" class="px-6 mt-8">
+                <h3 class="text-title2 text-lg font-semibold">Add Money</h3>
+                <form class="bg-white p-6 mt-4 rounded-3xl space-y-4 ">
+                    <!-- select bank -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Select A Bank</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank">
+                    </div>
+                    <!-- bank account number -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Bank Account Number</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank">
+                    </div>
+                    <!-- Amount to Add -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Amount to Add</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank" required>
+                    </div>
+                    <!-- Pin number -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Pin Number</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank" required>
+                    </div>
+                </form>
+            </section>
+            <!-- cash out forms end-->
+        </section>
+        <!-- mobile size end -->
     </main>
-    <script src="./js/utility.js"></script>
-    <script src="./js/addmoney.js"></script>
-    <script src="./js/cashout.js"></script>
-    <script src="./js/features.js"></script>
+
 </body>
 
 </html>
