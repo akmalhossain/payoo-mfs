@@ -10,9 +10,14 @@ document.getElementById('btn-add-money')
             const currentBalance = getInnerTextValueById('current-balance');
             const newBalance = currentBalance + addMoneyAmount;
             document.getElementById('current-balance').innerText = newBalance;
-            return newBalance;
+            // add to transaction history
+            const p = document.createElement('p');
+            p.innerText = `Added: ${addMoneyAmount} tk. New Balance: ${newBalance}`;
+            document.getElementById('transaction-container').appendChild(p);
+            // return newBalance;
         }
         else {
             alert('Wrong pin number')
         }
+
     })

@@ -10,3 +10,13 @@ function getInnerTextValueById(id){
     const valueToNum = parseFloat(innerTextValue);
     return valueToNum;
 }
+
+// toggle
+function showSectionById(id){
+    // hide all sections
+    document.getElementById('add-money-form').classList.add('hidden');
+    document.getElementById('cash-out-form').classList.add('hidden');
+    document.getElementById('transaction').classList.add('hidden');
+    // show the section with the provide id as parameter
+    document.getElementById(id).classList.remove('hidden');
+}
