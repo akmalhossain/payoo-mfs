@@ -32,3 +32,7 @@ function getTextFieldValueById(id){
 function changeCurrentBalance(id){
     document.getElementById(id).innerText = newBalance.toFixed(1);
 }
+
+function closeButton(id){
+    document.getElementById(id).style.display = 'none';
+}
