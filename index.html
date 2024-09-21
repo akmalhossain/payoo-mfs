@@ -176,13 +176,13 @@
                     <!-- bank account number -->
                     <div class="space-y-2">
                         <label class="text-title3 font-medium">Amount</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter amount to withdraw">
+                        <input id="withdraw-amount" type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter amount to withdraw">
                     </div>
                    
                     <!-- Pin number -->
                     <div class="space-y-2">
                         <label class="text-title3 font-medium">Pin Number</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter 4 digit pin number"
+                        <input id="cash-out-pin-no" type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter 4 digit pin number"
                             required>
                     </div>
                     <button id="btn-calculate-cash-out" class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Get Bonus</button>
@@ -201,16 +201,16 @@
                     <!-- bank account number -->
                     <div class="space-y-2">
                         <label class="text-title3 font-medium">Amount</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter amount to withdraw">
+                        <input id="transfer-money-amount" type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter amount to withdraw">
                     </div>
                     
                     <!-- Pin number -->
                     <div class="space-y-2">
                         <label class="text-title3 font-medium">Pin Number</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter 4 digit pin number"
+                        <input id="transfer-money-pin-no" type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter 4 digit pin number"
                             required>
                     </div>
-                    <button class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Get Bonus</button>
+                    <button id="btn-claculate-transfer-money" class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Get Bonus</button>
                 </form>
             </section>
             <!-- Transfer Money forms end-->
@@ -221,10 +221,10 @@
                     <!-- select bank -->
                     <div class="space-y-2">
                         <label class="text-title3 font-medium">Get Bonus</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter your coupon">
+                        <input id="coupon-code" type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter your coupon">
                     </div>
                     <!-- bank account number -->
-                    <button class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Get Bonus</button>
+                    <button id="btn-calculate-get-bonus" class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Get Bonus</button>
                    
                 </form>
             </section>
@@ -266,7 +266,7 @@
     <script src="./js/feature.js"></script>
     <script src="./js/addMoney.js"></script>
     <script src="./js/cashOut.js"></script>
-
+    <script src="./js/transferMoney.js"></script>
+    <script src="./js/getBonus.js"></script>
 </body>
-
 </html>

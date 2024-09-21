@@ -9,7 +9,8 @@ document.getElementById('btn-calculate-add-money')
         if(pinNumber === 123){
             newBalance = currentBalance + amountToAdd;
             console.log(newBalance);
-            document.getElementById('current-balance').innerText = newBalance;
+            changeCurrentBalance('current-balance');
+            
         }
         else{
             alert('Please check Details')
