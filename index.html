@@ -12,7 +12,7 @@
             theme: {
                 extend: {
                     colors: {
-                        clifford: '#da373d',
+                        primary: '#0874F2',
                         btnLabel: 'rgba(8, 8, 8, 0.7)',
                         txt: 'rgba(8, 8, 8, 0.5)',
                         title: 'rgba(8, 8, 8, 1)',
@@ -41,7 +41,7 @@
                             <img src="./image/logo.png" alt="">
                         </div>
                         <div>
-                            <h4 class="font-bold text-2xl text-black">$<span>4500</span></h4>
+                            <h4 class="font-bold text-2xl text-black">$<span id="current-balance">4500</span></h4>
                             <p>Available Balance</p>
                         </div>
                     </div>
@@ -56,22 +56,22 @@
                             is low and </p>
                     </div>
                     <div class="grid grid-cols-3 mt-8 gap-4   ">
-                        <button
+                        <button id="btn-add-money"
                             class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
                             <img src="./image/addmoney.svg" alt=""> Add Money </button>
-                        <button
+                        <button id="btn-cash-out"
                             class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
                             <img src="./image/cashout.svg" alt=""> Cashout </button>
-                        <button
+                        <button id="btn-transfer-money"
                             class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
                             <img src="./image/transferMoney.svg" alt=""> Transfer Money </button>
-                        <button
+                        <button id="btn-get-bonus"
                             class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
                             <img src="./image/getbonus.svg" alt=""> Get Bonus </button>
-                        <button
+                        <button id="btn-pay-bills"
                             class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
                             <img src="./image/paybill.svg" alt=""> Pay Bill </button>
-                        <button
+                        <button id="btn-transactions"
                             class="w-[123px] text-sm border text-btnLabel flex flex-col items-center rounded-2xl border-[rgba(8, 8, 8, 0.1)] py-5  gap-2">
                             <img src="./image/transaction.svg" alt=""> Transactions </button>
                     </div>
@@ -79,7 +79,7 @@
                 <!-- feature section end  -->
             </section>
             <!-- latest payment section start -->
-            <section class="mt-8 px-6">
+            <section id="latest-payment" class="mt-8 px-6">
                 <div class="flex justify-between">
                     <h3 class="text-title2 text-lg font-semibold">Latest Payment</h3>
                     <p>View All</p>
@@ -134,7 +134,7 @@
             </section>
             <!-- latest payment section end -->
             <!-- add money forms start-->
-            <section id="add-money-form" class="px-6 mt-8">
+            <section id="add-money-form" class="hidden px-6 mt-8">
                 <h3 class="text-title2 text-lg font-semibold">Add Money</h3>
                 <form class="bg-white p-6 mt-4 rounded-3xl space-y-4 ">
                     <!-- select bank -->
@@ -150,46 +150,122 @@
                     <!-- Amount to Add -->
                     <div class="space-y-2">
                         <label class="text-title3 font-medium">Amount to Add</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank" required>
+                        <input id="amount-to-add" type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank"
+                            required>
                     </div>
                     <!-- Pin number -->
                     <div class="space-y-2">
                         <label class="text-title3 font-medium">Pin Number</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank" required>
+                        <input id="add-money-pin-no" type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank"
+                            required>
                     </div>
+                    <button id="btn-calculate-add-money" class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Add Money</button>
                 </form>
             </section>
             <!-- add money forms end-->
+           
             <!-- cash out forms start-->
-            <section id="cash-out-form" class="px-6 mt-8">
-                <h3 class="text-title2 text-lg font-semibold">Add Money</h3>
+            <section id="cash-out-form" class="hidden px-6 mt-8">
+                <h3 class="text-title2 text-lg font-semibold">Cash Out</h3>
                 <form class="bg-white p-6 mt-4 rounded-3xl space-y-4 ">
                     <!-- select bank -->
                     <div class="space-y-2">
-                        <label class="text-title3 font-medium">Select A Bank</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank">
+                        <label class="text-title3 font-medium">Agent Number</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter 11 digit number">
                     </div>
                     <!-- bank account number -->
                     <div class="space-y-2">
-                        <label class="text-title3 font-medium">Bank Account Number</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank">
+                        <label class="text-title3 font-medium">Amount</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter amount to withdraw">
+                    </div>
+                   
+                    <!-- Pin number -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Pin Number</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter 4 digit pin number"
+                            required>
+                    </div>
+                    <button id="btn-calculate-cash-out" class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Get Bonus</button>
+                </form>
+            </section>
+            <!-- cash out forms end-->
+            <!-- Transfer Money forms start-->
+            <section id="transfer-money-form" class="hidden px-6 mt-8">
+                <h3 class="text-title2 text-lg font-semibold">Transfer Money</h3>
+                <form class="bg-white p-6 mt-4 rounded-3xl space-y-4 ">
+                    <!-- select bank -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">User Account Number</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter 11 digit number">
+                    </div>
+                    <!-- bank account number -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Amount</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter amount to withdraw">
+                    </div>
+                    
+                    <!-- Pin number -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Pin Number</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter 4 digit pin number"
+                            required>
+                    </div>
+                    <button class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Get Bonus</button>
+                </form>
+            </section>
+            <!-- Transfer Money forms end-->
+            <!-- get bonus forms start-->
+            <section id="get-bonus-form" class="hidden px-6 mt-8">
+                <h3 class="text-title2 text-lg font-semibold">Get Bonus</h3>
+                <form class="bg-white p-6 mt-4 rounded-3xl space-y-4 ">
+                    <!-- select bank -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Get Bonus</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter your coupon">
+                    </div>
+                    <!-- bank account number -->
+                    <button class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Get Bonus</button>
+                   
+                </form>
+            </section>
+            <!-- get bonus forms end-->
+              <!-- pay bills forms start-->
+            <section id="pay-bills-form" class="hidden px-6 mt-8">
+                <h3 class="text-title2 text-lg font-semibold">Pay Bill</h3>
+                <form class="bg-white p-6 mt-4 rounded-3xl space-y-4 ">
+                    <!-- select bank -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Select To pay</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select Bank">
+                    </div>
+                    <!-- Biller account number -->
+                    <div class="space-y-2">
+                        <label class="text-title3 font-medium">Biller Account Number</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter account number">
                     </div>
                     <!-- Amount to Add -->
                     <div class="space-y-2">
-                        <label class="text-title3 font-medium">Amount to Add</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank" required>
+                        <label class="text-title3 font-medium">Amount to Pay</label>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Enter account Number"
+                            required>
                     </div>
                     <!-- Pin number -->
                     <div class="space-y-2">
                         <label class="text-title3 font-medium">Pin Number</label>
-                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank" required>
+                        <input type="text" class="w-full bg-inputBg rounded-full px-5 py-3" placeholder="Select bank"
+                            required>
                     </div>
+                    <button class="btn btn-wide w-full bg-primary rounded-full border-none text-white">Get Bonus</button>
                 </form>
             </section>
-            <!-- cash out forms end-->
+            <!-- Pay bills forms end-->
         </section>
         <!-- mobile size end -->
     </main>
+    <script src="./js/utility.js"></script>
+    <script src="./js/feature.js"></script>
+    <script src="./js/addMoney.js"></script>
+    <script src="./js/cashOut.js"></script>
 
 </body>
 
